@@ -117,6 +117,7 @@ public class TicTacToe implements ActionListener {
         if(e.getSource() == resetPlayerScoresButton) {
             player1Wins = 0;
             player2Wins = 0;
+            scoresField.setText("<html>Player 1: " + player1Wins + "<br/>Player 2: " + player2Wins + "</html>");
         }
     }
 
@@ -264,6 +265,7 @@ public class TicTacToe implements ActionListener {
             oWins(2, 4, 6);
         }
 
+        // this here is bugging - since if non is empty and somebody has won it will display it's a tie.. will fix
         if(buttons[0].getText() != "" &&
                 buttons[1].getText() != "" &&
                 buttons[2].getText() != "" &&
@@ -291,6 +293,7 @@ public class TicTacToe implements ActionListener {
         }
         textField.setText("X wins");
         player1Wins++;
+        scoresField.setText("<html>Player 1: " + player1Wins + "<br/>Player 2: " + player2Wins + "</html>");
     }
 
     public void oWins(int a, int b, int c) {
@@ -303,5 +306,6 @@ public class TicTacToe implements ActionListener {
         }
         textField.setText("O wins");
         player2Wins++;
+        scoresField.setText("<html>Player 1: " + player1Wins + "<br/>Player 2: " + player2Wins + "</html>");
     }
 }
